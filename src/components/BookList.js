@@ -11,13 +11,15 @@ const BookList = () => {
 
   return (
     <div className="book-list" style={{ color: theme.syntax, background: theme.bg }}>
-      <ul>
+      {books.length > 0 ? <ul>
         {books.map((book, index) => (
           <li style={{ background: theme.ui }} key={index}>
             {book.title}
           </li>
         ))}
-      </ul>
+      </ul> : <ul>
+        <li>No books available</li>
+      </ul>}
       <BookForm />
       <ThemeToggle toggleTheme={toggleTheme} />
     </div>
