@@ -7,7 +7,9 @@ const BooksContextProvider = props => {
   const [books, dispatch] = useReducer(bookReducers, []);
 
   return (
-    <BooksContext.Provider value={{ books, dispatch }}>{props.children}</BooksContext.Provider>
+    <BooksContext.Provider value={{ books, dispatch }}>
+      {props.children}
+    </BooksContext.Provider>
   );
 };
 
