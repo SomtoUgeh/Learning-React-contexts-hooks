@@ -5,9 +5,13 @@ import { BooksContext } from "../contexts/BooksContext";
 import BookForm from "./BookForm";
 
 const BookList = () => {
-  const { isLightTheme, dark, light, toggleTheme } = useContext(ThemeContext);
+  const { isLightTheme, dark, light, dispatch } = useContext(ThemeContext);
   const { books } = useContext(BooksContext);
   const theme = isLightTheme ? light : dark;
+
+  const toggleTheme = () => {
+    dispatch({type: "TOGGLE_THEME"});
+  };
 
   return (
     <div className="book-list" style={{ color: theme.syntax, background: theme.bg }}>
