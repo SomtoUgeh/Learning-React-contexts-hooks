@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
+import ThemeToggle from "./ThemeToggle";
 
 export default class BookList extends Component {
   render() {
     return (
       <ThemeContext.Consumer>
-        {context => {
-          const { isLightTheme, dark, light } = context;
+        {({ isLightTheme, dark, light, toggleTheme }) => {
           const theme = isLightTheme ? light : dark;
 
           return (
@@ -16,6 +16,8 @@ export default class BookList extends Component {
                 <li style={{ background: theme.ui }}>The name of the winds</li>
                 <li style={{ background: theme.ui }}>The final empire</li>
               </ul>
+
+              <ThemeToggle toggleTheme={toggleTheme} />
             </div>
           );
         }}
