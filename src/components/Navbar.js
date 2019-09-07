@@ -12,9 +12,7 @@ const Navbar = () => {
       <h1>Context App</h1>
 
       <h3>{isAuthenticated ? "Logged in" : "Logged out"}</h3>
-      <button onClick={toggleAuthentication}>
-        {isAuthenticated ? "Logout" : "Login"}
-      </button>
+      <button onClick={toggleAuthentication}>{isAuthenticated ? "Logout" : "Login"}</button>
 
       <ul>
         <li>Home</li>

@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import ThemeToggle from "./ThemeToggle";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { BooksContext } from "../contexts/BooksContext";
@@ -12,7 +12,9 @@ const BookList = () => {
     <div className="book-list" style={{ color: theme.syntax, background: theme.bg }}>
       <ul>
         {books.map(book => (
-          <li style={{ background: theme.ui }} key={book.id}>{book.title}</li>
+          <li style={{ background: theme.ui }} key={book.id}>
+            {book.title}
+          </li>
         ))}
       </ul>
 
